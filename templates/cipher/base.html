@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projeto educativo sobre a Cifra de César.">
+  <title>{% block title %}César KCM Projeto Educativo{% endblock %}</title>
+  <link rel="icon" href="{% static 'favicon.ico' %}"><link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="{% url 'home' %}"><img src="{% static 'images/caesar-kcm-logo.png' %}" alt="Caesar KCM" style="width:205px;height:54px;object-fit:contain;display:block"></a>
+    <button class="menu-button" aria-label="Abrir menu de navegação" aria-expanded="false">☰</button>
+    <nav class="navigation">
+      <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">⌂ Início</a>
+      <a href="{% url 'encrypt' %}" class="{% if request.resolver_match.url_name == 'encrypt' %}active{% endif %}">⌑ Criptografar</a>
+      <a href="{% url 'decrypt' %}" class="{% if request.resolver_match.url_name == 'decrypt' %}active{% endif %}">⌑ Descriptografar</a>
+      <a href="{% url 'developers' %}" class="{% if request.resolver_match.url_name == 'developers' %}active{% endif %}">♙ Desenvolvedores</a>
+    </nav>
+  </div></header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer><div class="footer-inner"><div><b>▦ Criptografia de César — Projeto Educativo</b><small>IFPA Campus Conceição do Araguaia</small></div><button class="contact-trigger">✉ Contatos da Equipe</button><small>© {% now "Y" %} — Desenvolvido para fins didáticos e acadêmicos.</small></div></footer>
+  <dialog class="contact-dialog"><button class="close-dialog" aria-label="Fechar">×</button><h2>♙ Contatos da Equipe</h2><div class="contact-grid">
+    <article><b>Kevin Lucas Costa e Silva</b><a href="mailto:kevinlucas07cs@gmail.com">kevinlucas07cs@gmail.com</a><a href="https://github.com/kevinlucascosta" target="_blank" rel="noreferrer">GitHub: kevinlucascosta ↗</a></article>
+    <article><b>Maysa Toryn Mota Ferreira</b><a href="mailto:maysatoryn.contact@gmail.com">maysatoryn.contact@gmail.com</a><a href="https://github.com/maysatoryn" target="_blank" rel="noreferrer">GitHub: maysatoryn ↗</a></article>
+    <article><b>Carlos Henrique Freire Almeida</b><a href="mailto:carloshenrique86336@gmail.com">carloshenrique86336@gmail.com</a><a href="https://github.com/carlos0942" target="_blank" rel="noreferrer">GitHub: carlos0942 ↗</a></article>
+  </div></dialog>
+  <script src="{% static 'js/site.js' %}"></script>{% block scripts %}{% endblock %}
+</body></html>
