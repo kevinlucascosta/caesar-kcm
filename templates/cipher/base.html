@@ -5,11 +5,11 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Projeto educativo sobre a Cifra de César.">
   <title>{% block title %}César KCM Projeto Educativo{% endblock %}</title>
-  <link rel="icon" href="{% static 'favicon.ico' %}"><link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" href="{% static 'favicon.ico' %}"><link rel="stylesheet" href="{% static 'css/style.css' %}"><link rel="stylesheet" href="{% static 'css/legacy-layout.css' %}">
 </head>
 <body>
-  <header class="site-header"><div class="header-inner">
-    <a class="brand" href="{% url 'home' %}"><img src="{% static 'images/caesar-kcm-logo.png' %}" alt="Caesar KCM" style="width:205px;height:54px;object-fit:contain;display:block"></a>
+  <header class="site-header"><div class="header-inner legacy-header">
+    <a class="brand legacy-brand" href="{% url 'home' %}"><span class="brand-mark">◉ CÉSAR</span><span class="brand-copy"><b>CÉSAR KCM</b><small>IFPA CAMPUS CONCEIÇÃO</small></span></a>
     <button class="menu-button" aria-label="Abrir menu de navegação" aria-expanded="false">☰</button>
     <nav class="navigation">
       <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">⌂ Início</a>
