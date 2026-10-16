@@ -19,7 +19,7 @@ def caesar(text, shift):
 
 
 def home(request):
-    return render(request, "cipher/home.html")
+    return render(request, "cipher/index.html")
 
 
 def encrypt(request):
